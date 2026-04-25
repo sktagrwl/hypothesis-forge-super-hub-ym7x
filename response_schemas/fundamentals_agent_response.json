@@ -1,0 +1,20 @@
+{
+  "agent_name": "Fundamentals Agent",
+  "agent_id": "69ec53083c22c92d3568e960",
+  "description": "Analyzes company fundamentals including financial data, revenue growth, margins, order book, and cash position to provide a structured fundamentals summary.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "fundamentals_summary": "string",
+    "key_numbers": "string",
+    "strengths": ["string"],
+    "concerns": ["string"]
+  },
+  "example_response": {
+    "fundamentals_summary": "Revenue grew 5.6% YoY with EBIT margin at 24.5%.",
+    "key_numbers": "Revenue: Rs 63,973 crore, TCV: $8.6B, FCF conversion: 107%",
+    "strengths": ["Strong order book", "Healthy margins"],
+    "concerns": ["Client spending deferrals in BFSI"]
+  }
+}

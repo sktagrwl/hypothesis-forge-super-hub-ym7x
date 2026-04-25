@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {"id": "input_node", "type": "Input", "label": "User Query", "nodeCategory": "input"},
+    {"id": "manager_agent", "type": "Agent", "label": "Research Orchestrator", "nodeCategory": "agent", "agent_id": "69ec53210263199051be340c"},
+    {"id": "fundamentals_agent", "type": "Agent", "label": "Fundamentals Agent", "nodeCategory": "agent", "agent_id": "69ec53083c22c92d3568e960"},
+    {"id": "sentiment_agent", "type": "Agent", "label": "Sentiment Agent", "nodeCategory": "agent", "agent_id": "69ec5309683f81d0be89f237"},
+    {"id": "synthesis_agent", "type": "Agent", "label": "Synthesis Agent", "nodeCategory": "agent", "agent_id": "69ec5309a570e903fb89041e"},
+    {"id": "output_node", "type": "Output", "label": "Analysis Result", "nodeCategory": "end"}
+  ],
+  "edges": [
+    {"source": "input_node", "target": "manager_agent"},
+    {"source": "manager_agent", "target": "fundamentals_agent"},
+    {"source": "manager_agent", "target": "sentiment_agent"},
+    {"source": "fundamentals_agent", "target": "synthesis_agent"},
+    {"source": "sentiment_agent", "target": "synthesis_agent"},
+    {"source": "synthesis_agent", "target": "output_node"}
+  ]
+}

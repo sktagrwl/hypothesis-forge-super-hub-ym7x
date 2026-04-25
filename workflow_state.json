@@ -1,0 +1,75 @@
+{
+  "app_name": "HypothesisHQ",
+  "pattern": "manager-subagent",
+  "agents": {
+    "manager": {
+      "agent_id": "69ec53210263199051be340c",
+      "name": "Research Orchestrator",
+      "type": "manager",
+      "model": "gpt-4o",
+      "provider": "openai",
+      "temperature": 0.2,
+      "managed_agents": [
+        "69ec53083c22c92d3568e960",
+        "69ec5309683f81d0be89f237",
+        "69ec5309a570e903fb89041e"
+      ]
+    },
+    "sub_agents": [
+      {
+        "agent_id": "69ec53083c22c92d3568e960",
+        "name": "Fundamentals Agent",
+        "type": "sub-agent",
+        "model": "gpt-4o",
+        "provider": "openai",
+        "temperature": 0.2
+      },
+      {
+        "agent_id": "69ec5309683f81d0be89f237",
+        "name": "Sentiment Agent",
+        "type": "sub-agent",
+        "model": "gpt-4o",
+        "provider": "openai",
+        "temperature": 0.3
+      },
+      {
+        "agent_id": "69ec5309a570e903fb89041e",
+        "name": "Synthesis Agent",
+        "type": "sub-agent",
+        "model": "gpt-4o",
+        "provider": "openai",
+        "temperature": 0.3
+      }
+    ]
+  },
+  "primary_agent_id": "69ec53210263199051be340c",
+  "database": {
+    "db_name": "app_e84c909ad5fb2f0edb6657b0",
+    "collections": ["analyses"],
+    "schema": {
+      "analyses": {
+        "company_name": { "type": "String", "required": true },
+        "hypothesis": { "type": "String", "required": true },
+        "confirmations": { "type": "Array" },
+        "contradictions": { "type": "Array" },
+        "confidence_score": { "type": "Number", "required": true },
+        "confidence_rationale": { "type": "String" },
+        "fundamentals_summary": { "type": "String" },
+        "sentiment_summary": { "type": "String" },
+        "key_numbers": { "type": "String" },
+        "strengths": { "type": "Array" },
+        "concerns": { "type": "Array" },
+        "overall_sentiment": { "type": "String" },
+        "bullish_drivers": { "type": "Array" },
+        "bearish_drivers": { "type": "Array" },
+        "news_breakdown": { "type": "Array" }
+      }
+    }
+  },
+  "response_schemas": {
+    "research_orchestrator": "response_schemas/research_orchestrator_response.json",
+    "fundamentals_agent": "response_schemas/fundamentals_agent_response.json",
+    "sentiment_agent": "response_schemas/sentiment_agent_response.json",
+    "synthesis_agent": "response_schemas/synthesis_agent_response.json"
+  }
+}

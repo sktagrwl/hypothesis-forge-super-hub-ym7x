@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0a0a0a;
+    --surface: #0f0f0f;
+    --text: #f5f1e8;
+    --text-dim: rgba(245, 241, 232, 0.55);
+    --text-muted: rgba(245, 241, 232, 0.35);
+    --accent: #d4a574;
+    --accent-hover: #c89866;
+    --rule: rgba(245, 241, 232, 0.15);
+    --gain: #5a9b6b;
+    --loss: #c85050;
+    --input-bg: rgba(255, 255, 255, 0.02);
+    --input-border: rgba(245, 241, 232, 0.2);
+    --radius: 4px;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--rule);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+    line-height: 1.7;
+  }
+
+  *:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  /* Override shadcn Card defaults */
+  [data-slot="card"] {
+    border-radius: 0px;
+    box-shadow: none;
+    background-color: var(--surface);
+    border: 1px solid var(--rule);
+  }
+
+  /* Loading pulse bar */
+  .wd-loading-bar {
+    height: 1px;
+    background-color: var(--accent);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* Scrollbar styling for dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rule);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+}

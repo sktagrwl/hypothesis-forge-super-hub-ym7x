@@ -1,0 +1,82 @@
+{
+  "agent_name": "Research Orchestrator",
+  "agent_id": "69ec53210263199051be340c",
+  "description": "Receives company name and hypothesis, calls get_stock_data tool to fetch stock JSON, distributes data to Fundamentals and Sentiment sub-agents, collects their outputs, routes to Synthesis sub-agent, and returns final structured result to UI.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "company_name": "string",
+    "hypothesis": "string",
+    "fundamentals_summary": "string",
+    "sentiment_summary": "string",
+    "confirmations": [
+      "string"
+    ],
+    "contradictions": [
+      "string"
+    ],
+    "confidence_score": "number",
+    "confidence_rationale": "string",
+    "key_numbers": "string",
+    "strengths": [
+      "string"
+    ],
+    "concerns": [
+      "string"
+    ],
+    "overall_sentiment": "string",
+    "bullish_drivers": [
+      "string"
+    ],
+    "bearish_drivers": [
+      "string"
+    ],
+    "news_breakdown": [
+      {
+        "title": "string",
+        "sentiment": "string",
+        "hypothesis_relevant": "boolean",
+        "summary": "string"
+      }
+    ],
+    "disclaimer": "string"
+  },
+  "example_response": {
+    "company_name": "sample string",
+    "hypothesis": "sample string",
+    "fundamentals_summary": "sample string",
+    "sentiment_summary": "sample string",
+    "confirmations": [
+      "sample string"
+    ],
+    "contradictions": [
+      "sample string"
+    ],
+    "confidence_score": 0,
+    "confidence_rationale": "sample string",
+    "key_numbers": "sample string",
+    "strengths": [
+      "sample string"
+    ],
+    "concerns": [
+      "sample string"
+    ],
+    "overall_sentiment": "sample string",
+    "bullish_drivers": [
+      "sample string"
+    ],
+    "bearish_drivers": [
+      "sample string"
+    ],
+    "news_breakdown": [
+      {
+        "title": "sample string",
+        "sentiment": "sample string",
+        "hypothesis_relevant": false,
+        "summary": "sample string"
+      }
+    ],
+    "disclaimer": "sample string"
+  }
+}

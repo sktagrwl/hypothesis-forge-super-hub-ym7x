@@ -1,0 +1,36 @@
+{
+  "agent_name": "Sentiment Agent",
+  "agent_id": "69ec5309683f81d0be89f237",
+  "description": "Analyzes market sentiment, news, and social signals to provide sentiment context around the company and investment hypothesis.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "sentiment_summary": "string",
+    "overall_sentiment": "string",
+    "bullish_drivers": ["string"],
+    "bearish_drivers": ["string"],
+    "news_breakdown": [
+      {
+        "title": "string",
+        "sentiment": "string",
+        "hypothesis_relevant": "boolean",
+        "summary": "string"
+      }
+    ]
+  },
+  "example_response": {
+    "sentiment_summary": "Overall market sentiment is cautiously optimistic.",
+    "overall_sentiment": "Cautiously Bullish",
+    "bullish_drivers": ["AI and cloud adoption driving demand"],
+    "bearish_drivers": ["Rising competition from AI-native companies"],
+    "news_breakdown": [
+      {
+        "title": "TCS Q3 Results Beat Estimates",
+        "sentiment": "Positive",
+        "hypothesis_relevant": true,
+        "summary": "Strong quarterly results support digital transformation thesis."
+      }
+    ]
+  }
+}

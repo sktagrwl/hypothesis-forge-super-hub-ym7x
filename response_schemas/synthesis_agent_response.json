@@ -1,0 +1,20 @@
+{
+  "agent_name": "Synthesis Agent",
+  "agent_id": "69ec5309a570e903fb89041e",
+  "description": "Combines fundamentals and sentiment analysis to produce a final synthesis with confirmations, contradictions, confidence score, and investment rationale.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "confirmations": ["string"],
+    "contradictions": ["string"],
+    "confidence_score": "number",
+    "confidence_rationale": "string"
+  },
+  "example_response": {
+    "confirmations": ["Digital transformation spending continues to accelerate globally"],
+    "contradictions": ["Client spending deferrals in BFSI segment may slow growth"],
+    "confidence_score": 72,
+    "confidence_rationale": "Strong fundamentals and order book support the thesis, but near-term headwinds from client deferrals create uncertainty."
+  }
+}
